@@ -1,6 +1,7 @@
 <template>
     <div >
         <Header></Header>
+        <p>Hola Pendejo</p>
         <div class="content-wrapper mt-5">
             <div class="row">
             <div class="col-md-6 grid-margin stretch-card mt-4">
