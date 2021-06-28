@@ -40,4 +40,16 @@ export default {
 };
 </script>
 
-<style lang="css"></style>
+<style lang="css">
+.form-control{
+color:white !important;
+}
+body{
+background: black;
+}
+.vs__selected{
+color: white !important;
+}
+
+
+</style>

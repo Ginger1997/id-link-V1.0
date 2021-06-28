@@ -1,0 +1,226 @@
+.open-button {
+    background-color: black;
+    color: white;
+    padding: 16px 20px;
+    border: none;
+    cursor: pointer;
+    opacity: 0.8;
+    position: fixed;
+    bottom: 23px;
+    right: 28px;
+    width: 20px;
+}
+
+
+/* The popup chat - hidden by default */
+
+.chat-popup {
+    display: none;
+    position: fixed;
+    bottom: 0;
+    right: 15px;
+    border: 3px solid #f1f1f1;
+    z-index: 9;
+    background: rgba(0, 0, 0, 0.24);
+}
+
+
+/* Add styles to the form container */
+
+.form-container {
+    max-width: 300px;
+    padding: 10px;
+    background-color: #1c1e42;
+}
+
+
+/* Full-width textarea */
+
+.form-container textarea {
+    width: 100%;
+    padding: 15px;
+    margin: 5px 0 22px 0;
+    border: none;
+    background: #f1f1f1;
+    resize: none;
+    min-height: 200px;
+}
+
+
+/* When the textarea gets focus, do something */
+
+.form-container textarea:focus {
+    background-color: #ddd;
+    outline: none;
+}
+
+
+/* Set a style for the submit/send button */
+
+.form-container .btn {
+    background-color: #04AA6D;
+    color: white;
+    padding: 16px 20px;
+    border: none;
+    cursor: pointer;
+    width: 100%;
+    margin-bottom: 10px;
+    opacity: 0.8;
+}
+
+
+/* Add a red background color to the cancel button */
+
+.form-container .cancel {
+    background-color: red;
+}
+
+
+/* Add some hover effects to buttons */
+
+.form-container .btn:hover,
+.open-button:hover {
+    opacity: 1;
+}
+
+ ::-webkit-scrollbar {
+    width: 10px
+}
+
+::-webkit-scrollbar-track {
+    background: #eee
+}
+
+::-webkit-scrollbar-thumb {
+    background: #888
+}
+
+::-webkit-scrollbar-thumb:hover {
+    background: #555
+}
+
+.wrapper {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background: rgba(0, 0, 0, 0.24);
+}
+
+.main {
+    background-color: #1c1e42;
+    width: 310px;
+    border-radius: 8px;
+    padding: 6px 0px 0px 0px
+}
+
+.scroll {
+    overflow-y: scroll;
+    scroll-behavior: smooth;
+    height: 325px;
+    width: 298px;
+}
+
+.scroll::-webkit-scrollbar {
+    width: 8px;
+    /* Tamaño del scroll en vertical */
+    height: 8px;
+    /* Tamaño del scroll en horizontal */
+}
+
+.scroll::-webkit-scrollbar-thumb {
+    background: rgba(85, 158, 241, 0.24);
+    border-radius: 4px;
+}
+
+.scroll::-webkit-scrollbar-thumb:hover {
+    background: rgba(134, 159, 187, 0.24);
+    box-shadow: 0 0 2px 1px rgba(0, 0, 0, 0.2);
+}
+
+.scroll::-webkit-scrollbar-track {
+    background: radial-gradient(farthest-side ellipse at 10% 0, #333867, #17193B);
+    border-radius: 4px;
+}
+
+.scroll::-webkit-scrollbar-track:hover,
+.scroll::-webkit-scrollbar-track:active {
+    background: radial-gradient(farthest-side ellipse at 10% 0, #333867, #17193B);
+}
+
+.img1 {
+    border-radius: 50%;
+    background-color: #66BB6A
+}
+
+.name {
+    font-size: 8px
+}
+
+.msg {
+    background-color: #fff;
+    font-size: 11px;
+    padding: 5px;
+    border-radius: 5px;
+    font-weight: 500;
+    color: #3e3c3c
+}
+
+.between {
+    font-size: 8px;
+    font-weight: 500;
+    color: #a09e9e
+}
+
+.form-control {
+    font-size: 12px;
+    font-weight: 400;
+    width: 230px;
+    height: 30px;
+    border: none;
+    display: initial;
+}
+
+.form-control:focus {
+    box-shadow: none;
+    overflow: hidden;
+    border: none
+}
+
+.form-control:focus {
+    box-shadow: none !important
+}
+
+.icon1 {
+    color: #8bfab5 !important;
+    font-size: 18px !important;
+    cursor: pointer
+}
+
+.icon2 {
+    color: #8cf0d7 !important;
+    font-size: 20px !important;
+    position: relative;
+    left: 8px;
+    padding: 0px;
+    cursor: pointer
+}
+
+.icondiv {
+    border-radius: 50%;
+    width: 15px;
+    height: 15px;
+    padding: 2px;
+    position: relative;
+    bottom: 1px
+}
+
+.card-header {
+    position: fixed;
+    background: rgb(34, 87, 130);
+    width: 300px;
+    display: flex;
+}
+
+.close {
+    margin-left: 220px;
+}

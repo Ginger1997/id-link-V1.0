@@ -5,8 +5,8 @@
         <div class="container-fluid page-body-wrapper">
             <nav-fixed/>
 
-            <div class="main-panel">
-                <div class="content-wrapper">
+            <div class="main-panel" id="main">
+                <div class="content-wrapper" id="dashboard">
                     <div class="col-12">                            
                         <template v-if="currentRouteName==srtTem">
                             <dashboard/>
@@ -74,4 +74,9 @@ export default {
 };
 </script>
 
-<style scoped></style>
+<style scoped>
+#dashboard{
+margin-left: 10% !important;
+width: 100% !important;
+}
+</style>

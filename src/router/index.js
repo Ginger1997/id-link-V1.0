@@ -31,21 +31,21 @@ const routes = [{
 
     ...Contact,
     ...Services,
-    ...RegisterCompany,
     ...Login,
     ...Ecommerce,
-    ...User,
     ...PasswordReset,
-    ...Account,
 
 
     {
         path: pre,
         name: 'AppLayout',
-        component: () =>import ('@/views/AppLayout.vue'),
-        meta: { requireAuth: true },
+        component: () =>
+            import ('@/views/AppLayout.vue'),
+        meta: { requireAuth: false },
         children: [
-
+            ...RegisterCompany,
+            ...User,
+            ...Account,
         ],
     },
 ]

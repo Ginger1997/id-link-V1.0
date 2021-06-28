@@ -4,4 +4,8 @@
 </div>
 </template>
 
-<style></style>
+<style>
+.form-control{
+color:white;
+}
+</style>

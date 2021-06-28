@@ -1,5 +1,5 @@
 <template>
-    <nav class="navbar navbar-expand-md navbar-dark">
+    <nav class="navbar navbar-expand-md navbar-dark" id="home">
 		<div class="container-fluid">
 			<router-link to="/home" class="navbar-brand pl-4"><img  class="images" src="../../assets/pictures/idlink1.png" alt="..."></router-link>
 			<button type="button" class="navbar-toggler collapsed" data-toggle="collapse" data-target="#main-nav">

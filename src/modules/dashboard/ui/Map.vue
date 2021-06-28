@@ -1,5 +1,5 @@
 <template>
-    <div>
+    <div class= "container">
         <div class="container p-6" style="background: rgba(0, 0, 0, 0.24);">
             <div class="amcharts-map" ref="chartdiv"></div>
         </div>

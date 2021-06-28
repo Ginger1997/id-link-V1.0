@@ -1,10 +1,13 @@
 <template>
-    <div class="content-wrapper">
+<div class="container" >
+ <div class="col-12 grid-margin">
+    <div class="card">
+    <div class="card-body">
         <h1 style="text-align: center;">REGISTER USER</h1>
         <ValidationObserver v-slot="{ handleSubmit }">
             <form class="mt" @submit.prevent="handleSubmit(register_user)" autocomplete="off">
                 <div>
-                    <h4 class="mb-4">COMPANY INFORMATION</h4>
+                    <h4 class="mb-4">Company Information</h4>
                 </div>
                 <div class="row">
                     <div class="form-group col-xl-3 col-lg-4 col-md-4 col-sm-6">
@@ -120,6 +123,9 @@
             </form>
         </ValidationObserver>
     </div>
+    </div>
+   </div>
+</div>
 </template>
 
 

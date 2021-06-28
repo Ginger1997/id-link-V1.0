@@ -80,9 +80,4 @@ width: 20%;
 height: 20%;
 }
 
-#foot{
-  background:black !important;
-  box-shadow: 0px 10px 5px 1px rgb(248, 4, 4);
-}
-
 </style>

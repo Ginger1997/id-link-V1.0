@@ -44,7 +44,7 @@
 
 
 <script>
-import {apiCcompanyListCompany} from '../uri'
+import {apiUserListUser} from '../uriApi'
 import {getHttp} from '@/utils/httpDefault'
 import modalEdit from '@/modules/company/ui/EditCompany'
 
@@ -62,9 +62,9 @@ export default {
     },
     
     methods:{
-        async getDataListCompany () {
+        async getDataUser () {
             const objLoader = this.$loading.show();
-            const response = await getHttp(apiCcompanyListCompany)
+            const response = await getHttp(apiUserListUser)
             objLoader.hide()         
             if(response.status==200){
                 this.arrayDataList = response.data
@@ -74,12 +74,12 @@ export default {
             }
         },
       filterFunction(arrayDataList, filterObject) {
-        return this.arrayDataList.company_name.toLowerCase().includes(filterObject.filterText);
+        return this.arrayDataList.first_name.toLowerCase().includes(filterObject.filterText);
     }
     },
     mounted(){},
     created(){
-        this.getDataListCompany()
+        this.getDataListUser()
     }
 }
 </script>

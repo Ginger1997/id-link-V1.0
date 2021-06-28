@@ -5,7 +5,7 @@
         <p>hola</p>
         <div class="content-wrapper mt-5">
             <div class="row">
-            <div class="col-md-6 grid-margin stretch-card mt-4">
+            <div class="col-md-6 col-lg-6 grid-margin stretch-card mt-4">
                 <div class="card">
                     <div class="card-body">
                         <h4 class="card-title">Login</h4>
@@ -46,12 +46,8 @@
                     </div>
                 </div>
             </div>
-            <div class="col-md-6 grid-margin stretch-card mt-4">
-                <div class="card">
-                    <div class="card-body">
-                        <p>image</p>
-                    </div>
-                </div>
+            <div class="d-none d-lg-block col-md-3 col-lg-6 m-auto">
+                        <img class="img-fluid" style="max-width: 550px;" v-bind:src="require('@/assets/pictures/img-fondo.png')" alt="" />
             </div>
         </div>
         </div>
@@ -100,20 +96,20 @@ export default {
         const response = await postHttp(apiAuthenticate, this.formData)
         objLoader.hide()
     console.log(response);
-       /*  if(response.status===200){
+         if(response.status===200){
             //save token in localStorage
-            localStorage.setItem('keyToken', response.data.jwt)
+           // localStorage.setItem('keyToken', response.data.jwt)
 
             //read token function will get the auth token from local storage and store it in the main store.
-            this.readToken()
+           // this.readToken()
 
-            console.log('get', this.$store.getters.getToken);
+            //console.log('get', this.$store.getters.getToken);
 
             //redirect
-            //this.$router.push({ name: 'AppLayout'})
-        }else{
-            this.strErrorResponse = response.data.detail
-        } */
+            this.$router.push({ name: 'AppLayout'})
+      //  }else{
+        //    this.strErrorResponse = response.data.detail
+        } 
     },
     toggleShowPassword(){
       var show =document.getElementById('password')

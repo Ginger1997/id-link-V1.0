@@ -1,112 +1,120 @@
 <template>
-    <div class="container">
-    <div class="col-12 grid-margin">
-        <div class="card">
-            <div class="card-body">
-                <h4 class="card-title">Edit Company</h4>
-                <ValidationObserver v-slot="{handleSubmit}">
-                    <form class="form-sample" @submit.prevent="handleSubmit(editCompany)">
-                        <div class="row">
-                            <div class="col-md-6">
-                                <div class="form-group row">
-                                    <label class="col-sm-3 col-form-label">Logo: </label>
-                                    <div class="col-sm-9">
-                                        <input type="file" name="img[]" class="file-upload-default" />
-                                        <div class="input-group col-xs-12">
-                                            <input type="text" class="form-control file-upload-info" disabled placeholder="Upload Image" />
-                                            <span class="input-group-append">
-                                                <button class="file-upload-browse btn btn-primary" type="button">Upload</button>
-                                            </span>
+<div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+    <div class="modal-dialog modal-xl">
+        <div class="modal-content">
+            <div class="modal-header">
+                <button type="button" class="btn btn-secondary" data-dismiss="modal">X</button>
+            </div>
+            <div class="modal-body">
+                <div class="container">
+                    <div class="col-12 grid-margin">
+                        <div class="card">
+                            <div class="card-body">
+                                <h4 class="card-title">Edit Company</h4>
+                                <ValidationObserver v-slot="{handleSubmit}">
+                                    <form class="form-sample" @submit.prevent="handleSubmit(editCompany)">
+                                        <div class="row">
+                                            <div class="col-md-6">
+                                                <div class="form-group row">
+                                                    <label class="col-sm-3 col-form-label">Logo: </label>
+                                                    <div class="col-sm-9">
+                                                        <input type="file" name="img[]" class="file-upload-default" />
+                                                        <div class="input-group col-xs-12">
+                                                            <input type="text" class="form-control file-upload-info" disabled placeholder="Upload Image" />
+                                                            <span class="input-group-append">
+                                                                <button class="file-upload-browse btn btn-primary" type="button">Upload</button>
+                                                            </span>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                            <div class="col-md-6">
+                                                <ValidationProvider :name="objLabels.company_name" :rules="objRules.company_name" v-slot="{ errors }">
+                                                    <div class="form-group row">
+                                                        <label class="col-sm-3 col-form-label">Compnay Name:</label>
+                                                        <div class="col-sm-9">
+                                                            <input id="company_name" type="text" class="form-control" v-model="formData.company_name" placeholder="Company Name" />
+                                                        </div>
+                                                        <span>{{ errors[0] }}</span>
+                                                    </div>
+                                                </ValidationProvider>
+                                            </div>
                                         </div>
-                                    </div>
-                                </div>
-                            </div>
-                            <div class="col-md-6">
-                            <ValidationProvider :name="objLabels.company_name" :rules="objRules.company_name" v-slot="{ errors }">
-                                <div class="form-group row">
-                                    <label class="col-sm-3 col-form-label">Compnay Name:</label>
-                                    <div class="col-sm-9">
-                                       <input id="company_name" type="text" class="form-control" v-model="formData.company_name" placeholder="Company Name" />
-                                    </div>
-                                     <span>{{ errors[0] }}</span>
-                                </div>
-                            </ValidationProvider>
-                            </div>
-                        </div>
-                        <div class="row">
-                            <div class="col-md-6">
-                             <ValidationProvider :name="objLabels.field" :rules="objRules.field" v-slot="{ errors }">
-                                <div class="form-group row">
-                                    <label class="col-sm-3 col-form-label">Field:</label>
-                                    <div class="col-sm-9">
-                                        <input id="field" type="field" class="form-control" v-model="formData.field" placeholder="Field" />
-                                    </div>
-                                    <span>{{ errors[0] }}</span>
-                                </div>
-                              </ValidationProvider>
-                            </div>
-                            <div class="col-md-6">
-                             <ValidationProvider :name="objLabels.location_contry" :rules="objRules.location_contry" v-slot="{ errors }">
-                                <div class="form-group row">
-                                    <label class="col-sm-3 col-form-label">Country:</label>
-                                    <div class="col-sm-9">
-                                    <v-select v-model="formData.location_country" id="location_country" :options="arrayCountry"
-                                        :reduce="as => as.value" label="value">
-                                    </v-select>
-                                    </div>
-                                     <span>{{ errors[0] }}</span>
-                                </div>
-                               </ValidationProvider>
-                            </div>
-                        </div>
+                                        <div class="row">
+                                            <div class="col-md-6">
+                                                <ValidationProvider :name="objLabels.field" :rules="objRules.field" v-slot="{ errors }">
+                                                    <div class="form-group row">
+                                                        <label class="col-sm-3 col-form-label">Field:</label>
+                                                        <div class="col-sm-9">
+                                                            <input id="field" type="field" class="form-control" v-model="formData.field" placeholder="Field" />
+                                                        </div>
+                                                        <span>{{ errors[0] }}</span>
+                                                    </div>
+                                                </ValidationProvider>
+                                            </div>
+                                            <div class="col-md-6">
+                                                <ValidationProvider :name="objLabels.location_contry" :rules="objRules.location_contry" v-slot="{ errors }">
+                                                    <div class="form-group row">
+                                                        <label class="col-sm-3 col-form-label">Country:</label>
+                                                        <div class="col-sm-9">
+                                                            <v-select v-model="formData.location_country" id="location_country" :options="arrayCountry" :reduce="as => as.value" label="value"> </v-select>
+                                                        </div>
+                                                        <span>{{ errors[0] }}</span>
+                                                    </div>
+                                                </ValidationProvider>
+                                            </div>
+                                        </div>
 
-                        <div class="row">
-                            <div class="col-md-6">
-                            <ValidationProvider :name="objLabels.location_state" :rules="objRules.location_state" v-slot="{ errors }">
-                                <div class="form-group row">
-                                    <label class="col-sm-3 col-form-label">State/Province:</label>
-                                    <div class="col-sm-9">
-                                         <input id="location_state" type="state" class="form-control" v-model="formData.location_state" />
-                                       
-                                    </div>
-                                    <span>{{ errors[0] }}</span>
-                                </div>
-                             </ValidationProvider>
-                            </div>
-                            <div class="col-md-6">
-                            <ValidationProvider :name="objLabels.number_phone" :rules="objRules.number_phone" v-slot="{ errors }">
-                                <div class="form-group row">
-                                    <label class="col-sm-3 col-form-label">Phone Number:</label>
-                                    <div class="col-sm-9">
-                                        <input id="number_phone" type="text" class="form-control" v-model="formData.number_phone" />
-                                    </div>
-                                    <span>{{ errors[0] }}</span>
-                                </div>
-                            </ValidationProvider>
+                                        <div class="row">
+                                            <div class="col-md-6">
+                                                <ValidationProvider :name="objLabels.location_state" :rules="objRules.location_state" v-slot="{ errors }">
+                                                    <div class="form-group row">
+                                                        <label class="col-sm-3 col-form-label">State/Province:</label>
+                                                        <div class="col-sm-9">
+                                                            <input id="location_state" type="state" class="form-control" v-model="formData.location_state" />
+                                                        </div>
+                                                        <span>{{ errors[0] }}</span>
+                                                    </div>
+                                                </ValidationProvider>
+                                            </div>
+                                            <div class="col-md-6">
+                                                <ValidationProvider :name="objLabels.number_phone" :rules="objRules.number_phone" v-slot="{ errors }">
+                                                    <div class="form-group row">
+                                                        <label class="col-sm-3 col-form-label">Phone Number:</label>
+                                                        <div class="col-sm-9">
+                                                            <input id="number_phone" type="text" class="form-control" v-model="formData.number_phone" />
+                                                        </div>
+                                                        <span>{{ errors[0] }}</span>
+                                                    </div>
+                                                </ValidationProvider>
+                                            </div>
+                                        </div>
+                                        <div class="row">
+                                            <div class="col-md-6">
+                                                <ValidationProvider :name="objLabels.email" :rules="objRules.email" v-slot="{ errors }">
+                                                    <div class="form-group row">
+                                                        <label class="col-sm-3 col-form-label">Email:</label>
+                                                        <div class="col-sm-9">
+                                                            <input id="email" type="email" class="form-control" v-model="formData.email" />
+                                                        </div>
+                                                        <span>{{ errors[0] }}</span>
+                                                    </div>
+                                                </ValidationProvider>
+                                            </div>
+                                        </div>
+                                        <div class="mt-4">
+                                            <button type="submit" class="btn btn-primary btn-lg">SAVE</button>
+                                        </div>
+                                    </form>
+                                </ValidationObserver>
                             </div>
                         </div>
-                        <div class="row">
-                            <div class="col-md-6">
-                            <ValidationProvider :name="objLabels.email" :rules="objRules.email" v-slot="{ errors }">
-                                <div class="form-group row">
-                                    <label class="col-sm-3 col-form-label">Email:</label>
-                                    <div class="col-sm-9">
-                                        <input id="email" type="email" class="form-control" v-model="formData.email"/>
-                                    </div>
-                                     <span>{{ errors[0] }}</span>
-                                </div>
-                             </ValidationProvider>
-                            </div>
-                        </div>
-                         <div class="mt-4">
-                            <button type="submit" class="btn btn-primary btn-lg">SAVE</button>
-                         </div>
-                    </form>
-                </ValidationObserver>
+                    </div>
+                </div>
             </div>
         </div>
     </div>
-</div>
+</div> 
 </template>
 
 
@@ -211,3 +219,8 @@ export default {
     }
 }
 </script>
+<style scoped>
+.modal-dialog{
+margin-top: 5%;
+}
+</style>
