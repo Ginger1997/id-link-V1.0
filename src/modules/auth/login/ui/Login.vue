@@ -1,7 +1,8 @@
 <template>
     <div >
         <Header></Header>
-        <p>Hola Pendejo</p>
+        <div class="container mt-5">
+        <p>hola</p>
         <div class="content-wrapper mt-5">
             <div class="row">
             <div class="col-md-6 grid-margin stretch-card mt-4">
@@ -54,6 +55,7 @@
             </div>
         </div>
         </div>
+    </div>
         <Footer></Footer>
     </div>
 </template>
