@@ -5,13 +5,8 @@ export default {
  * @param {any} payload object authDataUser
  */
    setAuthenticateDataUser(state, payload) {
-    state.idUser = payload.id
-    state.authToken = payload.idToken
+    state.objUrser = payload
   },
-
-
-  
-
 
   /** 
  * @description 
@@ -20,6 +15,6 @@ export default {
  * @return {getImg} 
  */
   setTokenAuth(state, payload){
-    state.token = payload
+    state.authToken = payload
   }, 
 };

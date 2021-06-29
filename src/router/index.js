@@ -15,6 +15,7 @@ import Ecommerce from '@/modules/ecommerce/router'
 import User from '@/modules/user/router'
 import PasswordReset from '@/modules/auth/forgotPassword/router'
 import Account from '@/modules/account/router'
+import Solution from '@/modules/welcome/solution/router'
 
 Vue.use(VueRouter)
 
@@ -34,7 +35,7 @@ const routes = [{
     ...Login,
     ...Ecommerce,
     ...PasswordReset,
-
+    ...Solution,
 
     {
         path: pre,

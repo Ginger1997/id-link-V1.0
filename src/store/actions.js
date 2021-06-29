@@ -4,7 +4,7 @@ export default {
      * @param {any} state reference to the mutation setAuthenticateDataUser
      * @param {any} payload get data
      */
-   getAuthenticateDataUser:function(state, payload){
+   storeAuthenticateDataUser:function(state, payload){
     state.commit('setAuthenticateDataUser', payload)
   },
 

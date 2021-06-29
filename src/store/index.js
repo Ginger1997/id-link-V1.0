@@ -49,6 +49,8 @@ export default new Vuex.Store({
     authToken: null, 
         
     srtDataImg:'data:image/jpeg;base64,',
+
+    objUrser:{},
   },
 
   actions,

@@ -10,12 +10,12 @@ export default {
     getDataImg: state => state.srtDataImg,
 
     /** 
-    * @description gets the id value of the state
-    */  
-    getUserID: state => state.idUser,
-
-    /** 
     * @description gets the authToken value of the state
     */ 
     getToken: state => state.authToken,
+
+     /** 
+    * @description 
+    */
+    getDataUser: state => state.objUrser,
 };
