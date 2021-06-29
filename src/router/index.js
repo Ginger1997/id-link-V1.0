@@ -41,7 +41,7 @@ const routes = [{
         name: 'AppLayout',
         component: () =>
             import ('@/views/AppLayout.vue'),
-        meta: { requireAuth: false },
+        meta: { requireAuth: true },
         children: [
             ...RegisterCompany,
             ...User,
